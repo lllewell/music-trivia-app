@@ -19,13 +19,11 @@ Game.init(
                 key: 'id',
             },
         },
-        question_id: {
+        score: {
             type: DataTypes.INTEGER,
-            references: {
-                model: 'question',
-                key: 'id',
-            },
+            allowNull: false,
         },
+       
     },
     {
         sequelize,
