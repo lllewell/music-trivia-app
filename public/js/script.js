@@ -1,5 +1,6 @@
-// 1. Configure the wheel's properties:
 import {Wheel} from 'https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/dist/spin-wheel-esm.js';
+
+// 1. Configure the wheel's properties:
 const props = {
     items: [
       {
