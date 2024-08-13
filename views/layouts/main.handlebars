@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Trivia Game</title>
   <link rel="stylesheet" href="/css/jass.css">
-  <script src="https://cdn.jsdelivr.net/npm/spin-wheel@5.0.0/dist/spin-wheel-iife.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/dist/spin-wheel-iife.js"></script>
+  <script defer src="https://unpkg.com/tone"></script>
   <script defer src="/js/script.js"></script>
-  <script defer src="http://unpkg.com/tone"></script>
 </head>
 
 <body>
@@ -22,9 +22,7 @@
     </nav>
     {{/if}}
   </header>
-  <div class="wheel-container">
-    <script type="module"> import spin-wheel from "https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/+esm"</script>
-  </div>
+  <div class="wheel-container"></div>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>

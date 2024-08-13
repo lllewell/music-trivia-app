@@ -1,7 +1,6 @@
-import {Wheel} from 'https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/dist/spin-wheel-esm.js';
-
 // 1. Configure the wheel's properties:
-const props = {
+document.addEventListener('DOMContentLoaded', () => {
+  const props = {
     items: [
       {
         label: 'Hip-Hop',
@@ -14,23 +13,37 @@ const props = {
       },
       {
         label: 'Country',
-      }
+      },
       {
         label: 'Pop',
-      }
+      },
       {
         label: 'Reggaton',
       }
-    ]
+    ],
+    itemBackgroundColors: ['#fff', '#eee', '#ddd'],
+    itemLabelFontSizeMax: 40,
+    rotationResistance: -100,
+    rotationSpeedMax: 1000,
   }
   
   // 2. Decide where you want it to go:
   const container = document.querySelector('.wheel-container');
+  const star = document.createElement('img');
+  star.src = './star.png';
   
   // 3. Create the wheel in the container and initialise it with the props:
-  const wheel = new Wheel(container, props);
+  const wheel = new spinWheel.Wheel(container, props);
+  wheel.pointerAngle = 90;
+  wheel.overlayImage = star;
+  wheel.width = "20";
 
-  const winningItemIndex = await fetchWinningItemIndex();
-  const duration = 4000;
-  const easing = easing.cubicOut;
-  wheel.spinToItem(winningItemIndex, duration, true, 2, 1, easing) 
+  wheel.onCurrentIndexChange = e => console.log('INDEX', e);
+  wheel.onRest = e => console.log('REST', e, props.items[e.currentIndex].label);
+  wheel.onSpin = e => console.log('SPIN', e);
+
+  // const winningItemIndex = 1;
+  // const duration = 4000;
+  // const easing = easing.cubicOut;
+  // wheel.spinToItem(4, 3000, true, 2, 1);
+});
