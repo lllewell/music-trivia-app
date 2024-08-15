@@ -2,7 +2,8 @@
     {
         "question": "What year was hip hop created?",
         "answer": 1973,
-        "genre": "hip-hop"
+        "genre": "hip-hop",
+        "choices": ["a", "b", "c", "d"]
     },
     {
         "question": "This popular rock group shares its name with what flower?",

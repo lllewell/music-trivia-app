@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Question extends Model {}
+class Question extends Model { }
 
 Question.init(
   {
@@ -18,11 +18,16 @@ Question.init(
     answer: {
       type: DataTypes.STRING,
     },
-      genre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+    genre: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
+    choices: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+    
+    }
+
+  },
   {
     sequelize,
     timestamps: false,
