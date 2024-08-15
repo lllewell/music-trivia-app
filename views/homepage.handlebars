@@ -1,13 +1,19 @@
 <script src="https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/dist/spin-wheel-iife.js"></script>
+<script defer src="/js/question.js"></script>
 <div class="wheel-container"></div>
 
-{{#each users as |user| }}
+{{#each questions as |question| }}
 <div class="row align-center mb-5">
   <div class="col-md-6">
-    <h2>{{{get_emoji}}} {{user.name}}</h2>
+    <div id="quiz">
+    <div id="question"></div>
+    <div id="options"></div>
   </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+    {{!-- {{#if question.genre === 'Hip hop'}} --}}
+    {{!-- <h2>{{question.question}}</h2> --}}
+    {{!-- {{/if}} --}}
   </div>
+  {{!-- <textarea name="answer" id="answer">{{question.answer}}</textarea> --}}
 </div>
 {{/each}}
+    <button id="submit">Submit</button>
