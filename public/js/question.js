@@ -45,7 +45,7 @@ const getQuestion = async (event) => {
   const submitButton = document.getElementById("submit");
 
 
-    const response = await fetch("/api/question:genre", {
+    const response = await fetch("/api/questions/:genre", {
       method: "GET",
       body: JSON.stringify({ genre }),
       headers: { "Content-Type": "application/json" },
