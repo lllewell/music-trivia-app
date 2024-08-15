@@ -3,7 +3,7 @@ const { Question } = require('../../models');
 
 router.get('/:genre', async (req, res) => {
     try {
-      const questionData = await Question.findAll( {where: {genre: req.params.genre} }, {limit: 1});
+      const questionData = await Question.findOne( {where: {genre: req.params.genre} }, {limit: 1});
   
       req.session.save(() => {
         req.session.loggedIn = true;
