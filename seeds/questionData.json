@@ -2,31 +2,31 @@
     {
         "question": "What year was hip hop created?",
         "answer": 1973,
-        "genre": "Hip hop"
+        "genre": "hip-hop"
     },
     {
         "question": "This popular rock group shares its name with what flower?",
         "answer": "Guns & Roses",
-        "genre": "Rock"
+        "genre": "rock"
     },
     {
         "question": "What does R&B stand for?",
         "answer": "Rhythm & Blues",
-        "genre": "R&B"
+        "genre": "r-b"
     },
     {
         "question": "Who is Dolly Parton's god-daughter?",
         "answer": "Miley Cyrus",
-        "genre": "Country"
+        "genre": "country"
     },
     {
         "question": "Who is the king of pop?",
         "answer": "Michael Jackson",
-        "genre": "Pop"
+        "genre": "pop"
     },
     {
         "question": "What is this popular artist's, Ramón Ayala, stage name ",
         "answer": "Daddy Yankee",
-        "genre": "Pop"
+        "genre": "reggaeton"
     }
 ]

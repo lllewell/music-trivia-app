@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Question } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.get('/:genre', async (req, res) => {
     try {
-      const questionData = await Question.findOne( {where: {genre: req.body.genre} }, {limit: 1});
+      const questionData = await Question.findAll( {where: {genre: req.params.genre} }, {limit: 1});
   
       req.session.save(() => {
         req.session.loggedIn = true;
@@ -15,5 +15,6 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
 
   module.exports = router;
