@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Question } = require('../models');
+const { Game, Question } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -26,6 +26,25 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/scores', async (req, res) => {
+  try {
+    const gameData = await Game.findAll({
+      order: [
+        ['score', 'DESC']
+      ]
+    });
+    
+    const games = gameData.map((game) => game.get({ plain: true }));
+
+    res.render('scores', {
+      games,
+      loggedIn: req.session.loggedIn,
+    })
+    } catch (err) {
+    res.status(500).json(err);
+    }
 });
 
 module.exports = router;
