@@ -1,6 +1,6 @@
-const User = require('./User');
-const Game = require('./Game');
-const Question = require('./Question');
+const User = require('./user');
+const Game = require('./game');
+const Question = require('./question');
 
 
 User.hasMany(Game, {
