@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Question } = require('../../models');
 
-router.get('/questions/:genre', async (req, res) => {
+router.get('/:genre', async (req, res) => {
     try {
       const questionData = await Question.findOne( {where: {genre: req.params.genre} }, {limit: 1});
   
@@ -16,10 +16,10 @@ router.get('/questions/:genre', async (req, res) => {
     }
   });
 
-  router.get('/questions', async (req, res) => {
+  router.get('/', async (req, res) => {
     try {
       const questionData = await Question.findAll({ 
-        attributes: {exclude:["answer"]}
+        attributes: {exclude:["choices", "answer"]}
       });
      
       req.session.save(() => {
@@ -33,7 +33,7 @@ router.get('/questions/:genre', async (req, res) => {
     }
   });
  
-  router.get('/questions/:id', async (req, res) => {
+  router.get('/:id', async (req, res) => {
 
     try {
       const questionData = await Question.findByPk(req.params.id);
@@ -57,4 +57,4 @@ router.get('/questions/:genre', async (req, res) => {
   //   const randomEmployee = employeesArray[randomIndex];
   //   console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName} ${randomEmployee.salary.toFixed(2)}`);
   // }
-  // module.exports = router;
+  module.exports = router;
