@@ -1,42 +1,3 @@
-// const quizData = [
-//     {
-//         question: "What year was hip hop created?",
-//         options: [1973, 1992, 1986, 2000],
-//         answer: 1973,
-//         genre: "Hip hop"
-//     },
-//     {
-//         question: "This popular rock group shares its name with what flower?",
-//         options: ["Guns & Roses", "Guns & Hydrangeas", "Guns & Daises", "Guns & Tulips"],
-//         answer: "Guns & Roses",
-//         genre: "Rock"
-//     },
-//     {
-//         question: "What does R&B stand for?",
-//         options: ["Rhythm & Blues", "Rock & Banjo", "Roger & Bobby"],
-//         answer: "Rhythm & Blues",
-//         genre: "R&B"
-//     },
-//     {
-//         question: "Who is Dolly Parton's god-daughter?",
-//         options: ["Miley Cyrus", "Gwen Stefani", "Christina Aguilera", "Kelly Clarkson"],
-//         answer: "Miley Cyrus",
-//         genre: "Country"
-//     },
-//     {
-//         question: "Who is the king of pop?",
-//         options: ["Michael Jackson", "Elvis Presley", "Justin Bieber", "Willie Nelson"],
-//         answer: "Michael Jackson",
-//         genre: "Pop"
-//     },
-//     {
-//         question: "What is this popular artist's, Ramón Ayala, stage name ",
-//         options: ["Daddy Yankee", "Bad Bunny", "Rauw Alejandro"],
-//         answer: "Daddy Yankee",
-//         genre: "Reggaeton"
-//     }
-// ];
-
 const getQuestion = async (event) => {
   event.preventDefault();
 
@@ -45,9 +6,8 @@ const getQuestion = async (event) => {
   const submitButton = document.getElementById("submit");
 
 
-    const response = await fetch("/api/questions/:genre", {
+    const response = await fetch("/api/questions/r-b", {
       method: "GET",
-      body: JSON.stringify({ genre }),
       headers: { "Content-Type": "application/json" },
     });
 
