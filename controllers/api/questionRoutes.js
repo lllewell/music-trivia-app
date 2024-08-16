@@ -57,4 +57,4 @@ router.get('/questions/:genre', async (req, res) => {
   //   const randomEmployee = employeesArray[randomIndex];
   //   console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName} ${randomEmployee.salary.toFixed(2)}`);
   // }
-  // module.exports = router;
+module.exports = router;
