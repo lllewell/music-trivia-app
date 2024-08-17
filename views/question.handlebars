@@ -1,0 +1,6 @@
+<h2>Question: {{question.name}}</h2>
+<div id="choices">
+    {{#each question.choices as |choice|}}
+        <button>{{choice}}</button>
+    {{/each}}
+</div>

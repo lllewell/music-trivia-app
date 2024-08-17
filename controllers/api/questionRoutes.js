@@ -28,14 +28,18 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/:genre", async (req, res) => {
+router.get("/genre/:genre", async (req, res) => {
   try {
     const questionData = await Question.findOne(
       { where: { genre: req.params.genre } },
       { limit: 1 }
     );
 
-    res.status(200).json(questionData);
+    const question = questionData.get({ plain: true });
+    const layout = false;
+
+    // res.status(200).json(questionData);
+    return res.render('question', { question, layout });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
