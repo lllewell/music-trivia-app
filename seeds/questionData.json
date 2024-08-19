@@ -1,37 +1,37 @@
 [
     {
         "name": "What year was hip hop created?",
-        "answer": 1973,
+        "answer": 0,
         "genre": "hip-hop",
         "choices": [1973, 1986, 1992, 2000]
     },
     {
         "name": "This popular rock group shares its name with what flower?",
-        "answer": "Guns & Roses",
+        "answer": 2,
         "genre": "rock",
         "choices": ["Guns & Sunflowers", "Guns & Blossoms", "Guns & Roses", "Guns & Daisies"]
     },
     {
         "name": "What does R&B stand for?",
-        "answer": "Rhythm & Blues",
+        "answer": 0,
         "genre": "r-b",
         "choices": ["Rhythm & Blues", "Rock & Banjo", "Roger & Bobby"]
     },
     {
         "name": "Who is Dolly Parton's god-daughter?",
-        "answer": "Miley Cyrus",
+        "answer": 0,
         "genre": "country",
         "choices": ["Miley Cyrus", "Gwen Stefani", "Christina Aguilera", "Kelly Clarkson"]
     },
     {
         "name": "Who is the king of pop?",
-        "answer": "Michael Jackson",
+        "answer": 0,
         "genre": "pop",
         "choices": ["Michael Jackson", "Elvis Presley", "Justin Bieber", "Willie Nelson"]
     },
     {
         "name": "What is this popular artist's, Ramón Ayala, stage name ",
-        "answer": "Daddy Yankee",
+        "answer": 0,
         "genre": "reggaeton",
         "choices": ["Daddy Yankee", "Bad Bunny", "Rauw Alejandro"]
     }
