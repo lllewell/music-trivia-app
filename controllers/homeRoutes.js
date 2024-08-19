@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     const questionData = await Question.findAll({
-      attributes: { exclude: ['answer', 'genre'] },
+      attributes: { exclude: ['genre'] },
     });
 
     const questions = questionData.map((question) => question.get({ plain: true }));

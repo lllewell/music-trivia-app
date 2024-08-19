@@ -55,48 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     return data;
   };
 
-
   const handleSpin = async (e, items) => {
     const genre = items[e.currentIndex].id;
     quizElement.innerHTML = await getQuestion(genre);
   };
-
-  // function showQuestion() {
-  //   const question = quizData[currentQuestion];
-  //   questionElement.innerText = question.question;
-
-  //   optionsElement.innerHTML = "";
-  //   question.options.forEach(option => {
-  //     const button = document.createElement("button");
-  //     button.innerText = option;
-  //     optionsElement.appendChild(button);
-  //     button.addEventListener("click", selectAnswer);
-  //   });
-  // }
-
-  // function selectAnswer(e) {
-  //   const selectedButton = e.target;
-  //   const answer = quizData[currentQuestion].answer;
-
-  //   if (selectedButton.innerText === answer) {
-  //     score++;
-  //   }
-
-  //   currentQuestion++;
-
-  //   if (currentQuestion < quizData.length) {
-  //     showQuestion();
-  //   } else {
-  //     showResult();
-  //   }
-  // }
-
-  // function showResult() {
-  //   quiz.innerHTML = `
-  //     <h1>Quiz Completed!</h1>
-  //     <p>Your score: ${score}/${quizData.length}</p>
-  //   `;
-  // }
 
   const buildWheel = () => {
     // 2. Decide where you want it to go:
@@ -126,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('BUILT');
   }
   
-  const handleSubmit = () => {
+  const triggerWheelSpin = () => {
     if (wheel) {
       const random = Math.floor(Math.random() * items.length);
       wheel.spinToItem(random, 3000, true, 2, 1);
@@ -134,14 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const handleSelectedAnswer = (e) => {
+
     if (e.target.matches('button')) {
       console.log('SELECTED');
-      wheel.spinToItem(random, 3000, true, 2, 1);
+      
       // ALL JS GOES HERE FOR QUIZ ADVANCEMENT
+      // MESSAGE
+
+      quizElement.innerHTML = '<h2>Loading…</h2>';
+      // Determine if answer is correct
+      // If is correct confetti
+      // Else no whamy stop
+
+      // move to next question after delay
+      setTimeout(() => {
+        triggerWheelSpin();
+      }, 3000);
     }
   }
   
-  submitButton.addEventListener('click', handleSubmit);
+  // submitButton.addEventListener('click', handleSubmit);
 
   quizElement.addEventListener('click', handleSelectedAnswer);
 
