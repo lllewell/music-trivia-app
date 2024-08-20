@@ -100,6 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.matches('button')) {
       // MESSAGE
       quizElement.innerHTML = '<h2>Loading…</h2>';
+<<<<<<< HEAD
+=======
+      // Determine if answer is correct
+
+      // If is correct confetti
+      // Else no whamy stop
+>>>>>>> 4075ed2 (added info in quiz.js and question.handlebars)
 
       if (e.target.classList.contains('correct')) {
         party.confetti(document.querySelector('main'));
