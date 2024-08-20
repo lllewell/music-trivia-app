@@ -6,6 +6,12 @@
         "choices": [1973, 1986, 1992, 2000]
     },
     {
+        "name": "What of these songs are NOT by LL Cool J?",
+        "answer": 3,
+        "genre": "hip-hop",
+        "choices": ["Mama Said Knock You Out", "Headsprung", "Doin' It", "I'm Sprung"]
+    },
+    {
         "name": "Which of these artists have NOT done a collab with Nelly?",
         "answer": 2,
         "genre": "country",
@@ -24,16 +30,28 @@
         "choices": ["Rhythm & Blues", "Rock & Banjo", "Roger & Bobby"]
     },
     {
+        "name": "Finish this Mariah Carey lyric: I can't sleep at night when you're on my mind, ____'s on the radio?",
+        "answer": 2,
+        "genre": "r-b",
+        "choices": ["Al Green", "Marvin Gaye", "Bobby Womack", "Lenny Kravitz"]
+    },
+    {
         "name": "Who is Dolly Parton's god-daughter?",
-        "answer": 0,
+        "answer": 1,
         "genre": "country",
-        "choices": ["Miley Cyrus", "Gwen Stefani", "Christina Aguilera", "Kelly Clarkson"]
+        "choices": ["Gwen Stefani", "Miley Cyrus", "Christina Aguilera", "Kelly Clarkson"]
     },
     {
         "name": "Who is the king of pop?",
         "answer": 0,
         "genre": "pop",
         "choices": ["Michael Jackson", "Elvis Presley", "Justin Bieber", "Willie Nelson"]
+    },
+    {
+        "name": "Who does NSYNC stand for?",
+        "answer": 2,
+        "genre": "pop",
+        "choices": ["The group's moms names", "The band's synergy", "The group member's names"]
     },
     {
         "name": "What is this popular artist's, Ramón Ayala, stage name ",
