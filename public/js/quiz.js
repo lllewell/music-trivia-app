@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // wheel.spinToItem(4, 3000, true, 2, 1);
     console.log('BUILT');
   }
-  
+
   const triggerWheelSpin = () => {
     if (wheel) {
       const random = Math.floor(Math.random() * items.length);
@@ -98,23 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleSelectedAnswer = (e) => {
 
     if (e.target.matches('button')) {
-      console.log('SELECTED');
-      
-      // ALL JS GOES HERE FOR QUIZ ADVANCEMENT
       // MESSAGE
-
       quizElement.innerHTML = '<h2>Loading…</h2>';
-      // Determine if answer is correct
-      // If is correct confetti
-      // Else no whamy stop
 
-      // move to next question after delay
+      if (e.target.classList.contains('correct')) {
+        party.confetti(document.querySelector('main'));
+      } else {
+        e.target.classList.add("btn btn-danger");
+      }
+
       setTimeout(() => {
         triggerWheelSpin();
       }, 3000);
     }
   }
-  
+
   // submitButton.addEventListener('click', handleSubmit);
 
   quizElement.addEventListener('click', handleSelectedAnswer);
