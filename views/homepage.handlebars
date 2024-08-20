@@ -3,16 +3,9 @@
 <div class="wheel-container"></div>
 
 {{#each questions as |question| }}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <div id="quiz">
-      
-    </div>
-    {{!-- {{#if question.genre === 'Hip hop'}} --}}
-    {{!-- <h2>{{question.question}}</h2> --}}
-    {{!-- {{/if}} --}}
-  </div>
-  {{!-- <textarea name="answer" id="answer">{{question.answer}}</textarea> --}}
+<div class="text-center align-center mb-5">
+  <div style="display:flex; justify-content:center;">
+    <div id="quiz"></div>
 </div>
 {{/each}}
-<button id="submit">Spin</button>
+<button id="submit" class="btn btn-dark btn-lg custom-btn">Spin</button>

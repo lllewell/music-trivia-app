@@ -1,6 +1,8 @@
-<h2>Question: {{question.name}}</h2>
-<div id="choices">
-    {{#each question.choices as |choice|}}
-        <button>{{choice}}</button>
-    {{/each}}
+<div class="question-card">
+  <h2>Question: {{question.name}}</h2>
+  <div id="choices">
+      {{#each question.choices as |choice|}}
+          <button class="choice-btn">{{choice}}</button>
+      {{/each}}
+  </div>
 </div>
