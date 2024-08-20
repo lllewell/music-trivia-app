@@ -36,9 +36,16 @@ router.get("/genre/:genre", async (req, res) => {
     );
 
     const question = questionData.get({ plain: true });
+
+
+  console.log(question.answer);
+
+    question.choices = question.choices.map(
+      (choice, index) => ({ correct: index == question.answer, text: choice })
+    );
+
     const layout = false;
 
-    // res.status(200).json(questionData);
     return res.render('question', { question, layout });
   } catch (err) {
     console.log(err);
