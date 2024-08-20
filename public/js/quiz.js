@@ -103,7 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.classList.contains('correct')) {
         party.confetti(document.querySelector('main'));
       } else {
-        e.target.classList.add("btn", "btn-danger");
+        e.target.classList.remove("btn-primary");
+        e.target.classList.add("btn-danger");
       }
 
       setTimeout(() => {
