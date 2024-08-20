@@ -1,8 +1,8 @@
-<h2>Question: {{question.name}}</h2>
-<div id="choices">
-    {{#each question.choices as |choice|}}
-        <button {{#if correct: true}}class="foo"{{/if}}>{{choice.text}}</button>
-    {{/each}}
+<div class="question-card">
+  <h2>Question: {{question.name}}</h2>
+  <div id="choices">
+      {{#each question.choices as |choice|}}
+          <button class="btn btn-primary choice-btn">{{choice}}</button>
+      {{/each}}
+  </div>
 </div>
-
-{{log question.choices}}
