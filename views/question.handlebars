@@ -1,16 +1,6 @@
-<<<<<<< HEAD
-<div class="question-card">
-  <h2>Question: {{question.name}}</h2>
-  <div id="choices">
-      {{#each question.choices as |choice|}}
-          <button class="btn btn-primary choice-btn">{{choice}}</button>
-      {{/each}}
-  </div>
-=======
 <h2>Question: {{question.name}}</h2>
 <div id="choices">
     {{#each question.choices as |choice|}}
-        <button {{#if correct}}class="correct"{{/if}}>{{choice.text}}</button>
+        <button {{#if choice.correct}}class="correct"{{/if}}>{{choice.text}}</button>
     {{/each}}
->>>>>>> 4075ed2 (added info in quiz.js and question.handlebars)
 </div>
