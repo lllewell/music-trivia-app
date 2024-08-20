@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.classList.add("btn", "btn-danger");
       }
 
-
       setTimeout(() => {
         quizElement.innerHTML = '<h2>Loading…</h2>';
       }, 1000);
