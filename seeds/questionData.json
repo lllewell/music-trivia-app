@@ -6,6 +6,12 @@
         "choices": [1973, 1986, 1992, 2000]
     },
     {
+        "name": "Which of these artists have NOT done a collab with Nelly?",
+        "answer": 2,
+        "genre": "country",
+        "choices": ["Tim McGraw", "Kane Brown", "Jelly Roll", "Florida Georgia Line"]
+    },
+    {
         "name": "This popular rock group shares its name with what flower?",
         "answer": 2,
         "genre": "rock",
