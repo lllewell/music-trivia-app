@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-  background: linear-gradient(to right, #ff7e5f, #feb47b); 
+  background: #f1bd8d; 
 }
   
 .custom-btn {
@@ -33,4 +33,13 @@ body {
   padding: 10px 20px; 
   margin: 5px;
   cursor: pointer;
+}
+
+.star-pointer {
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  transform: rotate(180deg);
+  width: 100px;
+  height: 80px; 
 }

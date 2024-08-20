@@ -33,9 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
   let score = 0;
 
   const setupWheel = () => {
+    const colors = [
+      'rgba(255, 0, 0, 0.5)',   
+      'rgba(0, 0, 255, 0.5)', 
+      'rgba(255, 255, 0, 0.5)', 
+      'rgba(0, 255, 0, 0.5)',    
+      'rgba(75, 0, 130, 0.5)',  
+      'rgba(139, 0, 255, 0.5)'  
+    ];
     return {
-      items: items,
-      itemBackgroundColors: ['#fff', '#eee', '#ddd'],
+      items: items.map((item, index) => ({
+        ...item,
+        backgroundColor: colors[index % colors.length]
+      })),
       itemLabelFontSizeMax: 40,
       rotationResistance: -100,
       rotationSpeedMax: 1000,
@@ -61,10 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const buildWheel = () => {
-    // 2. Decide where you want it to go:
     const container = document.querySelector('.wheel-container');
     const star = document.createElement('img');
     star.src = './treble-clef.png';
+    star.classList.add('star-pointer');
+    container.appendChild(star);
 
     const props = setupWheel();
 
