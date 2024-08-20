@@ -1,6 +1,6 @@
 <h2>Question: {{question.name}}</h2>
 <div id="choices">
     {{#each question.choices as |choice|}}
-        <button {{#if choice.correct}}class="correct"{{/if}}>{{choice.text}}</button>
+        <button class="btn btn-primary {{#if choice.correct}}correct{{/if}}">{{choice.text}}</button>
     {{/each}}
 </div>

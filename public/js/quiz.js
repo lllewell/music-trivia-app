@@ -99,13 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.matches('button')) {
       // MESSAGE
-      quizElement.innerHTML = '<h2>Loading…</h2>';
 
       if (e.target.classList.contains('correct')) {
         party.confetti(document.querySelector('main'));
       } else {
-        e.target.classList.add("btn btn-danger");
+        e.target.classList.add("btn", "btn-danger");
       }
+
+
+      setTimeout(() => {
+        quizElement.innerHTML = '<h2>Loading…</h2>';
+      }, 1000);
 
       setTimeout(() => {
         triggerWheelSpin();
