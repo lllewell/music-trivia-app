@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const quizElement = document.getElementById("quiz");
   const submitButton = document.getElementById("submit");
+  const restartElement = document.getElementById("restart")
   const items = [
     {
       label: 'Hip-Hop',
@@ -27,10 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'reggaeton',
     }
   ];
-
+const maxQuestions = 4;
   let wheel;
   let currentQuestion = 0;
   let score = 0;
+  let incorrectAnswers = 0;
 
   const setupWheel = () => {
     const colors = [
@@ -112,24 +114,48 @@ document.addEventListener('DOMContentLoaded', () => {
       // MESSAGE
 
       if (e.target.classList.contains('correct')) {
+        score++;
         party.confetti(document.querySelector('main'));
       } else {
+        incorrectAnswers++;
         e.target.classList.remove("btn-primary");
         e.target.classList.add("btn-danger");
       }
-
-      setTimeout(() => {
-        quizElement.innerHTML = '<h2>Loading…</h2>';
-      }, 1000);
+      currentQuestion++;
+      if(currentQuestion < maxQuestions) {
+        setTimeout(() => {
+          quizElement.innerHTML = '<h2>Loading…</h2>';
+        }, 1000);
+      
 
       setTimeout(() => {
         triggerWheelSpin();
       }, 3000);
+    } else {
+      setTimeout(() => {
+        displayScore();
+     }, 3000);
     }
   }
+}
+const displayScore = () => {
+  const scorePercentage = ((score / maxQuestions) * 100).toFixed(0);
+  quizElement.innerHTML = `<h2>Your score is ${scorePercentage} out of ${'100%'}!</h2>
+  <p>You got ${incorrectAnswers} question(s) wrong.</p>`;
+  submitButton.style.display = 'none';
+
+}
+const resetQuiz = () => {
+  currentQuestion = 0;
+  score = 0;
+  incorrectAnswers = 0;
+  quizElement.innerHTML = '<h2>Loading...</h2>';
+  triggerWheelSpin();
+}
 
   // submitButton.addEventListener('click', handleSubmit);
 
+  restartElement.addEventListener('click', resetQuiz);
   quizElement.addEventListener('click', handleSelectedAnswer);
 
   buildWheel();
