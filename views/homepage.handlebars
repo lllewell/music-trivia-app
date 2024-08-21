@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/dist/spin-wheel-iife.js"></script>
 <script defer src="/js/quiz.js"></script>
-<div class="wheel-container"></div>
+<div id="sound" class="wheel-container"></div>
 
 {{#each questions as |question| }}
 <div class="text-center align-center mb-5">
@@ -9,3 +9,4 @@
 </div>
 {{/each}}
 <button id="submit" class="btn btn-dark btn-lg custom-btn">Spin</button>
+<button id="restart" class="btn btn-dark btn-lg custom-btn">Restart</button>
