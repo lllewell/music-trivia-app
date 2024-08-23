@@ -1,12 +1,22 @@
 <script src="https://cdn.jsdelivr.net/npm/spin-wheel@5.0.1/dist/spin-wheel-iife.js"></script>
 <script defer src="/js/quiz.js"></script>
-<div id="sound" class="wheel-container"></div>
+<div class="container d-flex flex-column align-items-center">
+ <div id="sound" class="wheel-container"></div>
+  <button id="restart" class="btn btn-dark btn-lg custom-btn mt-3 custom-right">Restart</button>
 
-{{#each questions as |question| }}
+  {{#each questions as |question| }}
+<div class="text-center align-center mt-3">
+  <div class="d-flex justify-content-center">
+    <div id="quiz" class="d-flex align-items-center flex-column"></div>
+  </div>
+</div>
+{{/each}}
+</div>
+
+{{!-- {{#each questions as |question| }}
 <div class="text-center align-center mb-5">
   <div class="d-flex justify-content-center">
     <div id="quiz" class="d-flex align-items-center flex-column"></div>
+  </div>
 </div>
-{{/each}}
-
-<button id="restart" class="btn btn-dark btn-lg custom-btn">Restart</button>
+{{/each}} --}}
