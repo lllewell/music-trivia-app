@@ -7,16 +7,9 @@ document.getElementById("sound").addEventListener("click", () => {
   Tone.start()
     .then(() => {
       player.start();
-    })
-    .catch((error) => {
-      console.error("Error starting Tone.js:", error);
-    });
-});
+      player.fadeOut = 3;
+      player.loop= true;
 
-document.getElementById("submit").addEventListener("click", () => {
-  Tone.start()
-    .then(() => {
-      player.start();
     })
     .catch((error) => {
       console.error("Error starting Tone.js:", error);
@@ -27,6 +20,8 @@ document.getElementById("restart").addEventListener("click", () => {
   Tone.start()
     .then(() => {
       player.start();
+      player.fadeOut = 3;
+      player.loop= true;
     })
     .catch((error) => {
       console.error("Error starting Tone.js:", error);
